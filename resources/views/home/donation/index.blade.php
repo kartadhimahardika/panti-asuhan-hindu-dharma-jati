@@ -1,0 +1,138 @@
+<x-layout>
+
+    @if (Session::has('success'))
+        <div id="toast-success"
+            class="fixed top-3 left-1/2 -translate-x-1/2 z-50 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 px-5 py-3 rounded-xl shadow-lg flex items-center gap-3 border border-green-500/40 transform transition-all duration-500 opacity-0 -translate-y-5">
+
+            <!-- Circle with check -->
+            <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+
+            <span class="font-medium">{{ Session::get('success') }}</span>
+
+            <button onclick="document.getElementById('toast-success').remove()"
+                class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 ml-2">
+                ✕
+            </button>
+        </div>
+    @endif
+    <section id="programs" class="py-24 bg-gradient-to-br from-blue-50 via-white to-green-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-blue-600 mb-6">DAFTAR <span
+                    class="text-gray-900">DONASI</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                Halaman donasi ini menyediakan informasi dan sarana bagi masyarakat untuk berpartisipasi dalam mendukung
+                kegiatan dan pembinaan anak asuh di Panti Asuhan Hindu Dharma Jati I</p>
+        </div>
+    </section>
+
+    {{-- <div class="mb-16">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+            Informasi Rekening Donasi
+        </h2>
+
+        <div class="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+            @foreach ($banks as $bank)
+                <div
+                    class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 p-6 border-l-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7v2h20V7L12 2zm10 9H2v9h20v-9z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">{{ $bank->name }}</h3>
+                            <p class="text-sm text-gray-500">a.n {{ $bank->holder }}</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center bg-blue-50 rounded-lg py-4">
+                        <p class="text-sm text-gray-600">Nomor Rekening</p>
+                        <p class="text-2xl font-bold text-blue-600 tracking-widest">
+                            {{ $bank->number }}
+                        </p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div> --}}
+
+    <div class="flex justify-center my-16">
+        <a href="/confirm"
+            class="bg-green-500 hover:bg-green-600 text-white px-10 py-3 rounded-lg font-medium transition">
+            Donasi Disini
+        </a>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            @foreach ($donations as $donation)
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <img src="{{ asset('images/avatar.jpg') }}" alt="{{ $donation->name }}"
+                                class="w-14 h-14 rounded-full flex-shrink-0 object-cover">
+
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-lg font-semibold text-gray-900 truncate">{{ $donation->name }}</h3>
+                                <p class="text-sm text-gray-500 truncate">{{ $donation->email }}</p>
+                                <div class="flex items-center mt-1">
+                                    <svg class="w-4 h-4 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586
+                                    7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                    <span class="text-xs text-green-600 font-medium">{{ $donation->status }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="bg-blue-50 rounded-lg p-4 text-center">
+                                <div class="text-2xl font-bold text-blue-600">Rp
+                                    {{ number_format($donation->amount, 0, ',', '.') }}
+                                </div>
+                                <div class="text-sm text-blue-700 mt-1">Transfer </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3 text-sm">
+                                <div>
+                                    <span class="text-gray-500">Tanggal:</span>
+                                    <div class="font-medium text-gray-900">{{ $donation->created_at->format('d F Y') }}
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-gray-500">Diverifikasi Pada:</span>
+                                    <div class="font-medium text-green-600">
+                                        {{ $donation->updated_at->format('d F Y') }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-sm">
+                                <span class="text-gray-500">Pesan:</span>
+                                <p class="text-gray-800 italic">{!! Str::limit(strip_tags($donation->message), 50) !!}</p>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="/donation/{{ $donation->slug }}"
+                                class="block w-full bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white text-center px-4 py-3 rounded-lg text-sm font-medium transition-all transform hover:scale-105">
+                                Lihat Detail
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        <div class="mt-12">
+            {{ $donations->links() }}
+        </div>
+
+
+    </div>
+
+
+</x-layout>
