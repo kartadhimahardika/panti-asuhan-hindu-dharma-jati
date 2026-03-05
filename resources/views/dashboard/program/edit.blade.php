@@ -61,6 +61,16 @@
 
                 <label class="block mb-2.5 text-sm font-medium text-heading">Upload Gambar</label>
 
+                @if ($program->photo)
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Gambar Saat Ini
+                        </label>
+                        <img src="{{ $program->photo }}" alt="{{ $program->title }}"
+                            class="w-48 rounded-lg shadow-md border">
+                    </div>
+                @endif
+
                 <input type="hidden" name="photo" id="photo-hidden">
 
                 <input

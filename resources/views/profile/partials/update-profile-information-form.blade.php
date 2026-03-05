@@ -9,27 +9,28 @@
     @method('patch')
 
     <div>
-        <label for="name" class="block font-medium text-gray-700">Nama</label>
+        <label for="name" class="block font-medium text-gray-900 dark:text-white">Nama</label>
         <input id="name" name="name" type="text" value="{{ old('name', $user->name) }}"
-            class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
+            class="mt-1 block w-full rounded-lg border border-gray-300 bg-white text-gray-900 text-sm p-2.5 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-400 dark:bg-zinc-800 dark:border-gray-500 dark:text-white dark:placeholder-gray-400 dark:focus:ring-indigo-500 dark:focus:border-indigo-500" />
         @error('name')
-            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+            <p class="text-red-600
+            text-sm mt-1">{{ $message }}</p>
         @enderror
     </div>
 
     <div>
-        <label for="name" class="block font-medium text-gray-700">Username</label>
+        <label for="name" class="block font-medium text-gray-700 dark:text-white">Username</label>
         <input id="username" name="username" type="text" value="{{ old('username', $user->username) }}"
-            class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
+            class="mt-1 block w-full rounded-lg border border-gray-300 bg-white text-gray-900 text-sm p-2.5 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-400 dark:bg-zinc-800 dark:border-gray-500 dark:text-white dark:placeholder-gray-400 dark:focus:ring-indigo-500 dark:focus:border-indigo-500" />
         @error('username')
             <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
         @enderror
     </div>
 
     <div>
-        <label for="email" class="block font-medium text-gray-700">Email</label>
+        <label for="email" class="block font-medium text-gray-700 dark:text-white">Email</label>
         <input id="email" name="email" type="email" value="{{ old('email', $user->email) }}"
-            class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500" />
+            class="mt-1 block w-full rounded-lg border border-gray-300 bg-white text-gray-900 text-sm p-2.5 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-400 dark:bg-zinc-800 dark:border-gray-500 dark:text-white dark:placeholder-gray-400 dark:focus:ring-indigo-500 dark:focus:border-indigo-500" />
         @error('email')
             <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
         @enderror
@@ -38,7 +39,8 @@
     {{-- upload avatar --}}
     <div>
 
-        <label class="block mb-2.5 text-sm font-medium text-heading" for="avatar">Upload avatar</label>
+        <label class="block mb-2.5 text-sm font-medium text-heading dark:text-white" for="avatar">Upload
+            avatar</label>
         <input
             class=" @error('avatar')
                        bg-red-50 border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500

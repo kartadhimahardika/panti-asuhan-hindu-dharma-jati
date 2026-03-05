@@ -25,7 +25,7 @@ class UpdateProgramRequest extends FormRequest
         return [
             'title' => 'sometimes|min:4|max:255',
             'category_id' => 'required',
-            'description' => 'required|min:50',
+            'description' => 'required|min:20',
             'photo' => 'nullable|string',
         ];
     }
@@ -38,8 +38,11 @@ class UpdateProgramRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'category_id.required' => 'Field :attribute harus dipilih',
-            'description.required' => 'Field :attribute harus diisi',
+            'title.min' => 'Bagian :attribute minimal harus terdiri dari :min karakter',
+            'title.max' => 'Bagian :attribute tidak boleh lebih dari :max karakter',
+            'category_id.required' => 'Bagian :attribute harus dipilih',
+            'description.required' => 'Bagian :attribute harus diisi',
+            'description.min' => 'Bagian :attribute harus terdiri dari minimal :min karakter',
         ];
     }
 

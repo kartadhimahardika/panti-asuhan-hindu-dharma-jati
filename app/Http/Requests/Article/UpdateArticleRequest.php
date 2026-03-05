@@ -24,7 +24,7 @@ class UpdateArticleRequest extends FormRequest
     {
         return [
             'title' => 'required|min:4|max:255',
-            'description' => 'required|min:50',
+            'description' => 'required|min:20',
             'photo' => 'nullable|string',
         ];
     }

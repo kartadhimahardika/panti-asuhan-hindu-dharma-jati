@@ -41,12 +41,16 @@ class StoreDonationRequest extends FormRequest
     {
         return [
             'name.required' => 'Nama wajib diisi',
+            'name.max' => ':attribute tidak boleh lebih dari :max karakter',
             'phone.required' => 'Nomor HP wajib diisi',
+            'phone.max' => 'Nomor HP tidak boleh lebih dari :max karakter',
             'email.required' => 'Email wajib diisi',
             'email.email' => 'Format email tidak valid',
+            'email.max' => 'Email tidak boleh lebih dari :max karakter',
             'amount.required' => 'Jumlah donasi wajib diisi',
             'amount.min' => 'Minimal donasi Rp 1.000',
             'proof.required' => 'Bukti donasi wajib diunggah',
+            'message.max' => ':attribute tidak boleh lebih dari :max karakter',
         ];
     }
 

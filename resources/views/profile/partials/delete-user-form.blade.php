@@ -58,14 +58,14 @@
     @csrf
     @method('delete')
 
-    <p class="text-sm text-gray-600">
+    <p class="text-sm text-gray-600 dark:text-white">
         Menghapus akun akan menghilangkan seluruh data Anda secara permanen. Tindakan ini tidak dapat dibatalkan.
     </p>
 
     <div>
-        <label for="password" class="block font-medium text-gray-700">Konfirmasi Password</label>
+        <label for="password" class="block font-medium text-gray-700 dark:text-white">Konfirmasi Password</label>
         <input id="password" name="password" type="password" placeholder="Masukkan password untuk menghapus akun"
-            class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-red-500 focus:border-red-500" />
+            class="mt-1 block w-full rounded-lg border border-gray-300 bg-white text-gray-900 text-sm p-2.5 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 placeholder-gray-400 dark:bg-zinc-800 dark:border-gray-500 dark:text-white dark:placeholder-gray-400 dark:focus:ring-red-500 dark:focus:border-red-500" />
         @error('password')
             <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
         @enderror

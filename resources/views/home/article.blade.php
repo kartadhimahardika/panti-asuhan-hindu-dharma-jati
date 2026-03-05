@@ -40,7 +40,7 @@
 
 
 
-                    <div class="mt-6">
+                    <div class="mt-6 flex flex-col sm:flex-row flex-wrap gap-3">
                         <button onclick="copyLink()"
                             class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition cursor-pointer">
                             Salin Link
