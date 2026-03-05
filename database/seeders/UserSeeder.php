@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
     {
         User::factory()->create([
             'name' => 'Panti Asuhan Hindu Dharma Jati I',
-            'username' => 'Dharma Jati I',
+            'username' => 'DharmaJatiI',
             'role' => 'admin',
             'email' => 'pantiasuhanhindudhramajatii@gmail.com',
             'password' => Hash::make('Hindudharmajati1'),

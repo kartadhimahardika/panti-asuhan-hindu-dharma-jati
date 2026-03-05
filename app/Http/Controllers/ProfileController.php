@@ -59,7 +59,7 @@ class ProfileController extends Controller
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
 
-            dd($avatar);
+            // dd($avatar);
 
             if (! empty($request->user()->avatar)) {
                 Storage::disk('public')->delete($request->user()->avatar);
@@ -67,9 +67,9 @@ class ProfileController extends Controller
 
             $fileName = $avatar->hashName();
 
-            Storage::disk('public')->put('img/'.$fileName, file_get_contents($avatar));
+            Storage::disk('public')->put('img/' . $fileName, file_get_contents($avatar));
 
-            $photoPath = Storage::url('profile/'.$fileName);
+            $photoPath = Storage::url('profile/' . $fileName);
 
             $validated['avatar'] = $photoPath;
         }
@@ -98,9 +98,9 @@ class ProfileController extends Controller
 
             $fileName = $avatar->hashName();
 
-            Storage::disk('public')->put('img/'.$fileName, file_get_contents($avatar));
+            Storage::disk('public')->put('img/' . $fileName, file_get_contents($avatar));
 
-            $photoPath = Storage::url('img/'.$fileName);
+            $photoPath = Storage::url('img/' . $fileName);
 
             return $user->update([
                 'avatar' => $photoPath,

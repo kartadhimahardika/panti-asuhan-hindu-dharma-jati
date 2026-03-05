@@ -52,7 +52,7 @@
                     <form action="/dashboard/donation/{{ $donation->slug }}" method="POST">
                         @csrf
                         @method('PATCH')
-                        <select name="status" class="border rounded px-2 py-1">
+                        <select name="status" class="border rounded px-2 py-1 cursor-pointer">
                             @foreach (\App\Models\Donation::getStatuses() as $status)
                                 <option value="{{ $status }}"
                                     {{ $donation->status === $status ? 'selected' : '' }}>
@@ -60,7 +60,8 @@
                                 </option>
                             @endforeach
                         </select>
-                        <button type="submit" class="bg-blue-600 text-white px-3 py-1 rounded ml-2">Update</button>
+                        <button type="submit"
+                            class="bg-blue-600 text-white px-3 py-1 rounded ml-2 cursor-pointer">Update</button>
 
                     </form>
 

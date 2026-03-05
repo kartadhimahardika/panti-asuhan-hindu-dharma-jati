@@ -10,7 +10,7 @@
         <div
             class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
             <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                Edit Berita
+                Edit Artikel
             </h3>
         </div>
         <!-- Modal body -->
@@ -45,7 +45,18 @@
             @enderror
 
             <div>
-                <label class="block mb-2.5 text-sm font-medium text-heading">Upload Gambar</label>
+                <label class="block mb-2.5 text-sm font-medium text-heading mt-4">Upload Gambar</label>
+
+                @if ($article->photo)
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Gambar Saat Ini
+                        </label>
+                        <img src="{{ $article->photo }}" alt="{{ $article->title }}"
+                            class="w-48 rounded-lg shadow-md border">
+                    </div>
+                @endif
+
                 <input type="hidden" name="photo" id="photo-hidden">
                 <input
                     class=" @error('photo') bg-red-50 border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500

@@ -40,6 +40,7 @@ class StoreArticleRequest extends FormRequest
             'title.required' => 'Bidang :attribute harus diisi',
             'title.min' => ':attribute minimal harus terdiri dari :min karakter',
             'title.max' => ':attribute tidak boleh lebih dari :max karakter',
+            'title.unique' => ':attribute sudah digunakan',
             'description.required' => 'Bidang :attribute harus diisi',
             'description.min' => ':attribute minimal harus terdiri dari :min karakter',
         ];

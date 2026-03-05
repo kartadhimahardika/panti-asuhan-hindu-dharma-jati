@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Panti Asuhan</title>
+    <title>Panti Asuhan Hindu Dharma Jati I</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -44,17 +44,14 @@
                     </div>
                     <div>
                         <h3 class="text-lg font-semibold mb-4">Informasi</h3>
-                        <ul class="space-y-2 text-gray-400">
+                        <ul class="grid grid-cols-2 gap-y-2 gap-x-8 text-gray-400">
                             <li><a href="/" class="hover:text-white">Beranda</a></li>
-                            <li><a href="/about" class="hover:text-white">Tentang</a></li>
-                            <li><a href="/programs" class="hover:text-white">Program</a></li>
-
-                        </ul>
-                    </div>
-                    <div>
-                        <ul class="space-y-2 text-gray-400 mt-12">
                             <li><a href="/articles" class="hover:text-white">Artikel</a></li>
+
+                            <li><a href="/about" class="hover:text-white">Tentang</a></li>
                             <li><a href="/donation" class="hover:text-white">Donasi</a></li>
+
+                            <li><a href="/programs" class="hover:text-white">Program</a></li>
                             <li><a href="/contact" class="hover:text-white">Kontak</a></li>
                         </ul>
                     </div>

@@ -60,7 +60,7 @@
                 <div>
                     <h2 class="text-3xl font-bold text-gray-900 mb-8">Informasi</h2>
                     <div class="space-y-8">
-                        <div class="flex items-start space-x-4">
+                        {{-- <div class="flex items-start space-x-4">
                             <div
                                 class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
                                 <i class="fa-solid fa-location-crosshairs fa-2x"></i>
@@ -72,30 +72,40 @@
                                     Bali
                                 </p>
                             </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
+                        </div> --}}
+                        <a href="https://wa.me/6281937004568" target="_blank"
+                            class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition">
+
                             <div
                                 class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fa-brands fa-whatsapp fa-2x"></i>
+                                <i class="fa-brands fa-whatsapp fa-2x text-green-600"></i>
                             </div>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    WhatsApp</h3>
-                                <p class="text-gray-600">6281937004568</p>
 
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-1">
+                                    WhatsApp
+                                </h3>
+                                <p class="text-gray-600">6281937004568</p>
                             </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
+                        </a>
+
+                        <a href="mailto:dharmajatibali@yahoo.com"
+                            class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition">
+
                             <div
                                 class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fa-regular fa-envelope fa-2x"></i>
+                                <i class="fa-regular fa-envelope fa-2x text-blue-600"></i>
                             </div>
+
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                                    Email</h3>
-                                <p class="text-gray-600">pantiasuhanhindudharmajatii@gmail.com</p>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-1">
+                                    Email
+                                </h3>
+                                <p class="text-gray-600">
+                                    dharmajatibali@yahoo.com
+                                </p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -41,20 +41,20 @@
 
 
             {{-- Update Profile --}}
-            <div class="bg-white shadow-md rounded-xl p-8">
-                <h3 class="text-lg font-semibold mb-6">Informasi Profil</h3>
+            <div class="bg-white shadow-md rounded-xl p-8 dark:bg-zinc-800">
+                <h3 class="text-lg font-semibold mb-6 dark:text-white">Informasi Profil</h3>
                 @include('profile.partials.update-profile-information-form')
             </div>
 
             {{-- Update Password --}}
-            <div class="bg-white shadow-md rounded-xl p-8">
-                <h3 class="text-lg font-semibold mb-6">Ubah Password</h3>
+            <div class="bg-white shadow-md rounded-xl p-8 dark:bg-zinc-800">
+                <h3 class="text-lg font-semibold mb-6 dark:text-white">Ubah Password</h3>
                 @include('profile.partials.update-password-form')
             </div>
 
             {{-- Delete User --}}
-            <div class="bg-white shadow-md rounded-xl p-8">
-                <h3 class="text-lg font-semibold mb-6 text-red-600">Hapus Akun</h3>
+            <div class="bg-white shadow-md rounded-xl p-8 dark:bg-zinc-800">
+                <h3 class="text-lg font-semibold mb-6 text-red-600 dark:text-red">Hapus Akun</h3>
                 @include('profile.partials.delete-user-form')
             </div>
 

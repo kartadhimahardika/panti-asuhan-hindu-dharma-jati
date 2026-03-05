@@ -59,10 +59,11 @@
                 </div>
             @enderror
 
-            <div>
+            <div class="mt-6">
 
-                <label class="block mb-2.5 text-sm font-medium text-heading">Upload Gambar</label>
-
+                <label class="block mb-2.5 text-sm font-medium text-gray-900 dark:text-white">
+                    Upload Gambar
+                </label>
                 <input type="hidden" name="photo" id="photo-hidden">
 
                 <input
