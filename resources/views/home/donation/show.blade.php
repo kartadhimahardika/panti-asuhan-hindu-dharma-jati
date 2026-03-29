@@ -17,22 +17,22 @@
                     <div class="grid grid-cols-2 gap-4">
                         <p>
                             <span class="font-semibold">Nama Donatur:</span>
-                            {{ $donation->name }}
-                        </p>
-                        <p>
-                            <span class="font-semibold">Email:</span>
-                            {{ $donation->email }}
-                        </p>
-                        <p>
-                            <span class="font-semibold">Nomor HP:</span>
-                            {{ $donation->phone }}
+                            @if ($donation->anonymous)
+                                {{ substr($donation->name, 0, 3) . str_repeat('*', max(strlen($donation->name) - 3, 1)) }}
+                            @else
+                                {{ $donation->name }}
+                            @endif
                         </p>
                         <p>
                             <span class="font-semibold">Jumlah Donasi:</span>
-                            Rp {{ number_format($donation->amount, 0, ',', '.') }}
+                            @if ($donation->anonymous)
+                                Rp ****
+                            @else
+                                Rp {{ number_format($donation->amount, 0, ',', '.') }}
+                            @endif
                         </p>
                         <p><span class="font-semibold">Metode:</span>
-                            Transfer Bank
+                            <span class="text-blue-700">Transfer Bank</span>
                         </p>
                         <p>
                             <span class="font-semibold">Status:</span>
@@ -57,7 +57,7 @@
 
                 <div class="mt-8 text-center">
                     <a href="/donation"
-                        class="bg-gray-700 hover:bg-gray-800 text-white px-6 py-3 rounded-lg transition">
+                        class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg transition">
                         Kembali ke Daftar Donasi
                     </a>
                 </div>

@@ -58,7 +58,7 @@
                     @enderror
                 </div>
 
-                <div class="mt-4 flex w-full items-center justify-between">
+                {{-- <div class="mt-4 flex w-full items-center justify-between">
                     <label for="remember_me" class="inline-flex items-center">
                         <input id="remember_me" type="checkbox"
                             class="shadow-xs rounded-sm border-gray-300 text-indigo-600 focus:ring-indigo-500"
@@ -73,7 +73,7 @@
                             Password?
                         </a>
                     @endif
-                </div>
+                </div> --}}
 
                 <button type="submit"
                     class="cursor-pointer whitespace-nowrap rounded-sm border border-sky-500 bg-transparent px-4 py-2 text-center text-sm font-medium tracking-wide text-sky-500 transition hover:bg-sky-600 hover:text-white hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 active:opacity-100 active:outline-offset-0 disabled:cursor-not-allowed disabled:opacity-75 dark:border-sky-500 dark:text-sky-500 dark:focus-visible:outline-sky-500">

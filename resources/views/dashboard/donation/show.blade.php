@@ -37,9 +37,18 @@
                         {{ $donation->name }}
                     </h1>
 
-                    <p class="text-gray-600 dark:text-gray-300">
-                        📞 {{ $donation->phone }}
-                    </p>
+                    <div
+                        class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-600 dark:text-gray-300 text-medium">
+                        <div>
+                            <span class="font-medium text-gray-800 dark:text-gray-200">Nomor HP:</span>
+                            {{ $donation->phone }}
+                        </div>
+
+                        <div>
+                            <span class="font-medium text-gray-800 dark:text-gray-200">Email:</span>
+                            {{ $donation->email }}
+                        </div>
+                    </div>
 
                     {{-- JUMLAH --}}
                     <div>

@@ -78,14 +78,17 @@ class DonationController extends Controller
             'amount' => $data['amount'],
             'proof' => $photoPath,
             'message' => $data['message'],
+            'anonymous' => $request->has('anonymous')
+
         ]);
 
         $adminNumber = env('ADMIN_WHATSAPP');
+        $cleanMessage = strip_tags($donation->message);
         $message = "Ada donasi baru:\n" .
             "Nama Donatur: {$donation->name}\n" .
             "Nomor HP: {$donation->phone}\n" .
             "Jumlah Donasi: Rp {$donation->amount}\n" .
-            "Pesan: {$donation->message}\n" .
+            "Pesan: {$cleanMessage}\n" .
             'Silakan cek dashboard untuk verifikasi.';
 
         FonnteService::sendWhatsApp($adminNumber, $message);
