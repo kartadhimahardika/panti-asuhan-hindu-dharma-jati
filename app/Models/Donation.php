@@ -21,6 +21,7 @@ class Donation extends Model
         'proof',
         'message',
         'status',
+        'anonymous'
     ];
 
     public function bank()

@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        const adminNumber = "628990086701";
+        const adminNumber = "6281937004568";
 
         const text =
 `Halo Admin, saya mengirim pesan dari halaman Contact Us:

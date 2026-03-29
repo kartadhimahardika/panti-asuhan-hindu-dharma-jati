@@ -14,6 +14,8 @@
             <form action="{{ route('donation.store') }}" method="POST" id="donation-form">
                 @csrf
 
+
+
                 <div class="mb-4">
                     <label class="block mb-2 text-sm font-medium">Nama Donatur</label>
                     <input type="text" name="name" value="{{ old('name') }}"
@@ -110,7 +112,7 @@
 
                 <div>
 
-                    <label class="block mb-2.5 text-sm font-medium text-heading">Upload Gambar</label>
+                    <label class="block mb-2.5 text-sm font-medium text-heading">Upload Bukti Transfer</label>
 
                     <input type="hidden" name="proof" id="proof-hidden">
 
@@ -129,9 +131,18 @@
                     <canvas id="canvas" class="hidden"></canvas>
                 </div>
 
+                <div class="mb-4 flex items-center">
+                    <input type="checkbox" name="anonymous" value="1" id="anonymous"
+                        class="w-4 h-4 border-gray-300 rounded cursor-pointer">
+
+                    <label for="anonymous" class="ml-2 text-sm text-gray-500">
+                        Centang jika ingin menyembunyikan nama dan jumlah donasi
+                    </label>
+                </div>
+
                 <div class="flex gap-2">
                     <button type="submit"
-                        class="px-6 py-2.5 bg-green-600 hover:bg-green-700 text-white text-sm rounded-lg">
+                        class="px-6 py-2.5 bg-green-600 hover:bg-green-700 text-white text-sm rounded-lg cursor-pointer">
                         Kirim
                     </button>
 
