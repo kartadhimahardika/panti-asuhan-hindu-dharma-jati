@@ -37,18 +37,34 @@
                         {{ $donation->name }}
                     </h1>
 
-                    <div
-                        class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-600 dark:text-gray-300 text-medium">
+                    <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600 dark:text-gray-300">
+
                         <div>
-                            <span class="font-medium text-gray-800 dark:text-gray-200">Nomor HP:</span>
-                            {{ $donation->phone }}
+                            <span class="block text-sm font-medium text-gray-500 dark:text-gray-400">Nomor HP</span>
+                            <p class="text-base font-semibold text-gray-900 dark:text-white">
+                                {{ $donation->phone }}
+                            </p>
                         </div>
 
                         <div>
-                            <span class="font-medium text-gray-800 dark:text-gray-200">Email:</span>
-                            {{ $donation->email }}
+                            <span class="block text-sm font-medium text-gray-500 dark:text-gray-400">Email</span>
+                            <p class="text-base font-semibold text-gray-900 dark:text-white">
+                                {{ $donation->email }}
+                            </p>
                         </div>
+
+                        <div>
+                            <span class="block text-sm font-medium text-gray-500 dark:text-gray-400">Donatur Anonymous
+                                (Samaran)</span>
+                            <p
+                                class="text-base font-semibold {{ $donation->anonymous === 'ya' ? 'text-yellow-600' : 'text-green-600' }}">
+                                {{ ucfirst($donation->anonymous) }}
+                            </p>
+                        </div>
+
                     </div>
+
+
 
                     {{-- JUMLAH --}}
                     <div>

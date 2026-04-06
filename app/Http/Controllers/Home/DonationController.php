@@ -78,7 +78,7 @@ class DonationController extends Controller
             'amount' => $data['amount'],
             'proof' => $photoPath,
             'message' => $data['message'],
-            'anonymous' => $request->has('anonymous')
+            'anonymous' => $request->has('anonymous') ? 'ya' : 'tidak'
 
         ]);
 

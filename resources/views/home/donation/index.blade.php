@@ -80,7 +80,7 @@
 
                             <div class="flex-1 min-w-0">
                                 <h3 class="text-lg font-semibold text-gray-900 truncate">
-                                    @if ($donation->anonymous)
+                                    @if ($donation->anonymous == 'ya')
                                         {{ substr($donation->name, 0, 3) . str_repeat('*', max(strlen($donation->name) - 3, 1)) }}
                                     @else
                                         {{ $donation->name }}
@@ -98,11 +98,14 @@
                         <div class="space-y-3">
                             <div class="bg-blue-50 rounded-lg p-4 text-center">
                                 <div class="text-2xl font-bold text-blue-600">
-                                    @if ($donation->anonymous)
-                                        Rp ****
-                                    @else
-                                        Rp {{ number_format($donation->amount, 0, ',', '.') }}
-                                    @endif
+                                    <p>
+                                        Rp
+                                        @if ($donation->anonymous === 'ya')
+                                            ****
+                                        @else
+                                            {{ number_format($donation->amount, 0, ',', '.') }}
+                                        @endif
+                                    </p>
                                 </div>
                                 <div class="text-sm text-blue-700 mt-1">Transfer </div>
                             </div>
