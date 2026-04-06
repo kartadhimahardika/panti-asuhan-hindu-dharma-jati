@@ -17,15 +17,16 @@
                     <div class="grid grid-cols-2 gap-4">
                         <p>
                             <span class="font-semibold">Nama Donatur:</span>
-                            @if ($donation->anonymous)
+                            @if ($donation->anonymous === 'ya')
                                 {{ substr($donation->name, 0, 3) . str_repeat('*', max(strlen($donation->name) - 3, 1)) }}
                             @else
                                 {{ $donation->name }}
                             @endif
                         </p>
+
                         <p>
                             <span class="font-semibold">Jumlah Donasi:</span>
-                            @if ($donation->anonymous)
+                            @if ($donation->anonymous === 'ya')
                                 Rp ****
                             @else
                                 Rp {{ number_format($donation->amount, 0, ',', '.') }}

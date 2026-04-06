@@ -132,10 +132,9 @@
                 </div>
 
                 <div class="mb-4 flex items-center">
-                    <input type="checkbox" name="anonymous" value="1" id="anonymous"
-                        class="w-4 h-4 border-gray-300 rounded cursor-pointer">
+                    <input type="checkbox" name="anonymous" id="anonymous" class="w-4 h-4 border-gray-300 rounded">
 
-                    <label for="anonymous" class="ml-2 text-sm text-gray-500">
+                    <label for="anonymous" class="ml-2 text-sm text-gray-700">
                         Centang jika ingin menyembunyikan nama dan jumlah donasi
                     </label>
                 </div>
